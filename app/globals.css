@@ -6,6 +6,10 @@
   color-scheme: dark;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   height: 100%;
@@ -47,5 +51,101 @@ a {
   .section-subtitle {
     @apply mt-3 text-sm sm:text-base text-textSecondary max-w-2xl;
   }
+
+  /* Card hover lift */
+  .card-hover {
+    @apply transition-all duration-200 hover:-translate-y-0.5 hover:shadow-lg hover:shadow-black/30;
+  }
+
+  /* Primary button */
+  .btn-primary {
+    @apply inline-flex items-center rounded-full bg-accent px-5 py-2.5 text-sm font-medium text-white shadow-sm transition-all duration-150 hover:bg-accentSoft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
+
+  /* Ghost button */
+  .btn-ghost {
+    @apply inline-flex items-center rounded-full border border-borderSubtle bg-transparent px-5 py-2.5 text-sm font-medium text-textPrimary transition-all duration-150 hover:bg-muted focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-borderSubtle focus-visible:ring-offset-2 focus-visible:ring-offset-background;
+  }
 }
 
+/* ── Prose styles for MDX field notes ─────────────────────────── */
+.note-prose {
+  color: #9CA3AF;
+  font-size: 0.9375rem;
+  line-height: 1.75;
+}
+
+.note-prose p {
+  margin-top: 1.25rem;
+}
+
+.note-prose p:first-child {
+  margin-top: 0;
+}
+
+.note-prose h2 {
+  margin-top: 2rem;
+  font-size: 1.0625rem;
+  font-weight: 600;
+  color: #F9FAFB;
+  letter-spacing: -0.01em;
+}
+
+.note-prose h3 {
+  margin-top: 1.5rem;
+  font-size: 0.9375rem;
+  font-weight: 600;
+  color: #F9FAFB;
+}
+
+.note-prose ul {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style-type: disc;
+}
+
+.note-prose ul li {
+  margin-top: 0.375rem;
+}
+
+.note-prose ol {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+  list-style-type: decimal;
+}
+
+.note-prose ol li {
+  margin-top: 0.375rem;
+}
+
+.note-prose strong {
+  font-weight: 500;
+  color: #F9FAFB;
+}
+
+.note-prose em {
+  font-style: italic;
+}
+
+.note-prose code {
+  font-size: 0.85em;
+  background: #101319;
+  border: 1px solid #1F2933;
+  border-radius: 4px;
+  padding: 0.1em 0.35em;
+  color: #93C5FD;
+}
+
+.note-prose blockquote {
+  border-left: 2px solid #1F2933;
+  margin-left: 0;
+  padding-left: 1rem;
+  color: #6B7280;
+  font-style: italic;
+}
+
+.note-prose hr {
+  border: none;
+  border-top: 1px solid #1F2933;
+  margin: 2rem 0;
+}

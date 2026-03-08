@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ['system-ui', 'ui-sans-serif', 'sans-serif'],
+        sans: ['var(--font-inter)', 'system-ui', 'ui-sans-serif', 'sans-serif'],
       },
       colors: {
         background: '#050608',
@@ -21,10 +21,23 @@ const config: Config = {
         textPrimary: '#F9FAFB',
         textSecondary: '#9CA3AF',
       },
+      keyframes: {
+        'fade-up': {
+          '0%': { opacity: '0', transform: 'translateY(16px)' },
+          '100%': { opacity: '1', transform: 'translateY(0)' },
+        },
+        'fade-in': {
+          '0%': { opacity: '0' },
+          '100%': { opacity: '1' },
+        },
+      },
+      animation: {
+        'fade-up': 'fade-up 0.5s ease-out both',
+        'fade-in': 'fade-in 0.4s ease-out both',
+      },
     },
   },
   plugins: [],
 };
 
 export default config;
-

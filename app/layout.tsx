@@ -1,9 +1,16 @@
 import type { Metadata } from 'next';
+import { Inter } from 'next/font/google';
 import './globals.css';
 import { siteConfig } from '../config/siteConfig';
 import { Navbar } from '../components/Navbar';
 import { Footer } from '../components/Footer';
 import { buildBaseMetadata } from '../lib/seo';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter',
+  display: 'swap',
+});
 
 export const metadata: Metadata = buildBaseMetadata();
 
@@ -13,7 +20,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.variable}>
       <body className="bg-background text-textPrimary">
         <div className="min-h-screen flex flex-col">
           <Navbar />
@@ -58,4 +65,3 @@ export default function RootLayout({
     </html>
   );
 }
-
