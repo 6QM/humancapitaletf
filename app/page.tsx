@@ -4,6 +4,8 @@ import { siteConfig } from '../config/siteConfig';
 import { Section } from '../components/Section';
 import { buildPageMetadata } from '../lib/seo';
 import { notes } from '../content/notes';
+import { CompoundingVisualizer } from '../components/CompoundingVisualizer';
+import { EmailCapture } from '../components/EmailCapture';
 
 export const metadata = buildPageMetadata({
   title: copy.meta.title,
@@ -74,6 +76,15 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* ── Compounding Visualizer ───────────────────────────────── */}
+      <Section
+        id="visualizer"
+        title="See the math"
+        subtitle="Drag the sliders. The gap between starting now and waiting 5 years is the entire argument for this framework."
+      >
+        <CompoundingVisualizer />
+      </Section>
 
       {/* ── Problem ──────────────────────────────────────────────── */}
       <Section id="problem" title="The problem">
@@ -280,6 +291,17 @@ export default function HomePage() {
             </li>
           ))}
         </ul>
+      </Section>
+
+      {/* ── Email capture ────────────────────────────────────────── */}
+      <Section
+        id="follow"
+        title="Follow the experiment"
+        subtitle="Occasional field notes when something meaningful happens—a rebalance, an insight, a quarterly review. No noise."
+      >
+        <div className="max-w-xl">
+          <EmailCapture />
+        </div>
       </Section>
 
       {/* ── Start CTA ────────────────────────────────────────────── */}

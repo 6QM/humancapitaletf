@@ -149,3 +149,40 @@ a {
   border-top: 1px solid #1F2933;
   margin: 2rem 0;
 }
+
+/* ── Range input (compounding visualizer) ─────────────────────── */
+.viz-range {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 4px;
+  border-radius: 2px;
+  background: #1F2933;
+  outline: none;
+  cursor: pointer;
+}
+
+.viz-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3B82F6;
+  cursor: pointer;
+  border: 2px solid #050608;
+  box-shadow: 0 0 0 1px #3B82F6;
+  transition: box-shadow 0.15s;
+}
+
+.viz-range::-webkit-slider-thumb:hover {
+  box-shadow: 0 0 0 3px rgba(59,130,246,0.25);
+}
+
+.viz-range::-moz-range-thumb {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: #3B82F6;
+  cursor: pointer;
+  border: 2px solid #050608;
+}
