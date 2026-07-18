@@ -1,37 +1,54 @@
 import type { Metadata } from 'next';
 import { siteConfig } from '../config/siteConfig';
+import type { Locale } from './i18n';
+import { localePath } from './i18n';
 
-export function buildBaseMetadata(): Metadata {
-  const title = siteConfig.name;
-  const description = siteConfig.description;
-  const url = siteConfig.canonicalUrl;
+type PageMetadataInput = {
+  locale: Locale;
+  title: string;
+  description: string;
+  path?: string;
+};
+
+export function buildPageMetadata({
+  locale,
+  title,
+  description,
+  path = '',
+}: PageMetadataInput): Metadata {
+  const canonical = `${siteConfig.canonicalUrl}${localePath(locale, path)}`;
+  const alternateLocale = locale === 'zh' ? 'en' : 'zh';
 
   return {
+    metadataBase: new URL(siteConfig.canonicalUrl),
     title,
     description,
-    metadataBase: new URL(url),
     alternates: {
-      canonical: url,
+      canonical,
+      languages: {
+        'zh-CN': localePath('zh', path),
+        en: localePath('en', path),
+        'x-default': localePath('zh', path),
+      },
     },
     openGraph: {
+      type: 'website',
+      siteName: siteConfig.name,
+      locale: locale === 'zh' ? 'zh_CN' : 'en_US',
+      alternateLocale: alternateLocale === 'zh' ? 'zh_CN' : 'en_US',
       title,
       description,
-      url,
-      siteName: siteConfig.name,
-      type: 'website',
+      url: canonical,
     },
     twitter: {
-      card: 'summary_large_image',
+      card: 'summary',
       title,
       description,
     },
-  };
-}
-
-export function buildPageMetadata(overrides: Partial<Metadata>): Metadata {
-  return {
-    ...buildBaseMetadata(),
-    ...overrides,
+    robots: {
+      index: true,
+      follow: true,
+    },
   };
 }
 

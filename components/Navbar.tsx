@@ -1,130 +1,53 @@
-'use client';
-
-import { useState } from 'react';
 import Link from 'next/link';
-import { usePathname } from 'next/navigation';
 import { siteConfig } from '../config/siteConfig';
+import { getContent } from '../content/siteContent';
+import type { Locale } from '../lib/i18n';
+import { localePath } from '../lib/i18n';
+import { LanguageSwitch } from './LanguageSwitch';
+import { MobileMenu } from './MobileMenu';
 
-const navLinks = [
-  { href: '/framework', label: 'Framework' },
-  { href: '/notes', label: 'Notes' },
-  { href: '/about', label: 'About' },
-];
-
-export function Navbar() {
-  const [open, setOpen] = useState(false);
-  const pathname = usePathname();
+export function Navbar({ locale }: { locale: Locale }) {
+  const content = getContent(locale);
+  const links = [
+    { href: localePath(locale, '/framework'), label: content.nav.framework },
+    { href: localePath(locale, '/programs'), label: content.nav.programs },
+    { href: localePath(locale, '/about'), label: content.nav.about },
+  ];
 
   return (
-    <header className="sticky top-0 z-40 border-b border-borderSubtle bg-background/85 backdrop-blur">
-      <div className="container-inner flex items-center justify-between py-3">
-        {/* Logo */}
-        <Link
-          href="/"
-          className="flex items-baseline gap-2 group"
-          onClick={() => setOpen(false)}
-        >
-          <span className="text-sm font-semibold tracking-tight text-textPrimary group-hover:text-white transition-colors">
-            {siteConfig.name}
+    <header className="site-header">
+      <div className="container-inner nav-shell">
+        <Link href={localePath(locale)} className="brand" aria-label="Human Capital ETF home">
+          <span className="brand-mark" aria-hidden="true">
+            <span />
+            <span />
+            <span />
+            <span />
           </span>
-          <span className="hidden text-[11px] text-textSecondary sm:inline">
-            Concept Prospectus
-          </span>
+          <span>Human Capital ETF</span>
         </Link>
 
-        {/* Desktop nav */}
-        <nav aria-label="Primary" className="hidden sm:flex items-center gap-1">
-          {navLinks.map((link) => {
-            const active = pathname === link.href;
-            return (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-3 py-1.5 rounded-full text-sm transition-colors ${
-                  active
-                    ? 'text-textPrimary bg-muted'
-                    : 'text-textSecondary hover:text-textPrimary hover:bg-muted/60'
-                }`}
-              >
-                {link.label}
-              </Link>
-            );
-          })}
-          <a
-            href={siteConfig.experimentUrl}
-            target="_blank"
-            rel="noreferrer"
-            className="ml-2 rounded-full bg-accent px-3.5 py-1.5 text-xs font-medium text-white transition hover:bg-accentSoft"
-          >
-            Follow Experiment
+        <nav className="desktop-nav" aria-label="Primary navigation">
+          {links.map((link) => (
+            <Link key={link.href} href={link.href}>
+              {link.label}
+            </Link>
+          ))}
+          <a href={siteConfig.personalSiteUrl} target="_blank" rel="noreferrer">
+            {content.nav.author} <span aria-hidden="true">↗</span>
           </a>
+          <LanguageSwitch locale={locale} label={content.nav.language} />
         </nav>
 
-        {/* Mobile hamburger */}
-        <button
-          type="button"
-          aria-label={open ? 'Close menu' : 'Open menu'}
-          aria-expanded={open}
-          onClick={() => setOpen((o) => !o)}
-          className="sm:hidden flex flex-col justify-center items-center w-8 h-8 gap-1.5 rounded focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent"
-        >
-          <span
-            className={`block h-px w-5 bg-textSecondary transition-all duration-200 origin-center ${
-              open ? 'rotate-45 translate-y-[3px]' : ''
-            }`}
-          />
-          <span
-            className={`block h-px w-5 bg-textSecondary transition-all duration-200 ${
-              open ? 'opacity-0 scale-x-0' : ''
-            }`}
-          />
-          <span
-            className={`block h-px w-5 bg-textSecondary transition-all duration-200 origin-center ${
-              open ? '-rotate-45 -translate-y-[3px]' : ''
-            }`}
-          />
-        </button>
+        <MobileMenu
+          locale={locale}
+          menuLabel={content.nav.menu}
+          authorLabel={content.nav.author}
+          authorHref={siteConfig.personalSiteUrl}
+          languageLabel={content.nav.language}
+          links={links}
+        />
       </div>
-
-      {/* Mobile menu */}
-      {open && (
-        <div className="sm:hidden border-t border-borderSubtle bg-background/95 backdrop-blur animate-fade-in">
-          <nav className="container-inner py-4 flex flex-col gap-1">
-            <Link
-              href="/"
-              onClick={() => setOpen(false)}
-              className="px-3 py-2.5 rounded-lg text-sm text-textSecondary hover:text-textPrimary hover:bg-muted transition-colors"
-            >
-              Home
-            </Link>
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setOpen(false)}
-                className={`px-3 py-2.5 rounded-lg text-sm transition-colors ${
-                  pathname === link.href
-                    ? 'text-textPrimary bg-muted'
-                    : 'text-textSecondary hover:text-textPrimary hover:bg-muted'
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
-            <div className="mt-2 pt-2 border-t border-borderSubtle">
-              <a
-                href={siteConfig.experimentUrl}
-                target="_blank"
-                rel="noreferrer"
-                onClick={() => setOpen(false)}
-                className="block px-3 py-2.5 rounded-lg text-sm text-accent font-medium hover:bg-muted transition-colors"
-              >
-                Follow Experiment ↗
-              </a>
-            </div>
-          </nav>
-        </div>
-      )}
     </header>
   );
 }

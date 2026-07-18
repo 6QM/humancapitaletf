@@ -1,15 +1,35 @@
-import createMDX from '@next/mdx';
-
-const withMDX = createMDX({
-  extension: /\.mdx?$/,
-});
-
+/** @type {import('next').NextConfig} */
 const nextConfig = {
-  experimental: {
-    mdxRs: true,
+  async redirects() {
+    return [
+      {
+        source: '/',
+        destination: '/zh',
+        permanent: false,
+      },
+      {
+        source: '/framework',
+        destination: '/zh/framework',
+        permanent: true,
+      },
+      {
+        source: '/about',
+        destination: '/zh/about',
+        permanent: true,
+      },
+      {
+        source: '/programs',
+        destination: '/zh/programs',
+        permanent: true,
+      },
+      {
+        source: '/notes/:path*',
+        destination: '/zh/programs',
+        permanent: true,
+      },
+    ];
   },
-  pageExtensions: ['ts', 'tsx', 'mdx'],
 };
 
-export default withMDX(nextConfig);
+export default nextConfig;
 
