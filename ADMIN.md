@@ -1,19 +1,19 @@
 # Content update guide
 
-The public site is a two-page book in each language.
+The public site is a two-page English text.
 
 ## What to edit
 
-- Framework definitions and the four positions: `site/zh/index.html` and `site/en/index.html`.
-- Smith, Marx, Schultz, Becker, source notes, and references: `site/zh/origins.html` and `site/en/origins.html`.
-- Typography, spacing, responsive behavior, and print layout: `site/book.css`.
+- Framework definitions and the four positions: `site/index.html`.
+- Personal origin, Smith, Marx, Schultz, Becker, and references: `site/origins.html`.
+- Typography, section rules, mobile layout, and print behavior: `site/works.css`.
 
 ## Before publishing
 
-1. Update Chinese and English together.
+1. Keep all public copy in English.
 2. Verify every quotation against its linked source.
-3. Do not state that Marx proposed human-capital theory; he described labour-power within a different theory.
+3. Do not state that Marx proposed human-capital theory; he described labour-power and the labor process within a different theory.
 4. Run `npm run build`.
-5. Open the files in `dist/` or print them to confirm the reading order.
+5. Read the files in `dist/` to confirm the chapter order.
 
 Do not add images, embedded media, JavaScript, popups, forms, dashboards, fixed portfolio percentages, or invented results.

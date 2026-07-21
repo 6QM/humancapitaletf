@@ -19,6 +19,7 @@ async function walk(directory) {
 const files = await walk(sourceRoot);
 const htmlFiles = files.filter((file) => file.endsWith('.html'));
 const forbidden = [/<img\b/i, /<svg\b/i, /<canvas\b/i, /<script\b/i, /background-image\s*:/i, /url\s*\(/i];
+const chineseText = /[\u3400-\u9fff]/u;
 
 for (const file of files) {
   if (!/\.(html|css)$/.test(file)) continue;
@@ -27,6 +28,9 @@ for (const file of files) {
     if (pattern.test(content)) {
       throw new Error(`Pure-text check failed in ${path.relative(projectRoot, file)}: ${pattern}`);
     }
+  }
+  if (chineseText.test(content)) {
+    throw new Error(`English-only check failed in ${path.relative(projectRoot, file)}`);
   }
 }
 
@@ -63,4 +67,4 @@ await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(sourceRoot, outputRoot, { recursive: true });
 
-console.log(`Validated and built ${htmlFiles.length} pure-text pages in dist/.`);
+console.log(`Validated and built ${htmlFiles.length} English pure-text pages in dist/.`);

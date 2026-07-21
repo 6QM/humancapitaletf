@@ -8,5 +8,27 @@
         "distDir": "dist"
       }
     }
+  ],
+  "redirects": [
+    {
+      "source": "/en/origins.html",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/zh/origins.html",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/en",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh",
+      "destination": "/",
+      "permanent": true
+    }
   ]
 }
