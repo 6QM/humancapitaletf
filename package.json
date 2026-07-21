@@ -1,27 +1,10 @@
 {
   "name": "human-capital-etf",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "eslint .",
-    "typecheck": "tsc --noEmit"
-  },
-  "dependencies": {
-    "next": "^16.2.10",
-    "react": "^19.2.4",
-    "react-dom": "^19.2.4"
-  },
-  "devDependencies": {
-    "@types/node": "22.10.2",
-    "@types/react": "18.3.12",
-    "eslint": "^9.39.5",
-    "eslint-config-next": "^16.2.10",
-    "typescript": "5.7.2"
-  },
-  "overrides": {
-    "postcss": "^8.5.10"
+    "dev": "python3 -m http.server 3000 --directory site",
+    "build": "node scripts/build-static.mjs",
+    "check": "node scripts/build-static.mjs"
   }
 }

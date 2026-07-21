@@ -1,38 +1,19 @@
 # Content update guide
 
-## The short version
+The public site is a two-page book in each language.
 
-Most website copy lives in `content/siteContent.ts`.
+## What to edit
 
-The file contains two complete language objects:
+- Framework definitions and the four positions: `site/zh/index.html` and `site/en/index.html`.
+- Smith, Marx, Schultz, Becker, source notes, and references: `site/zh/origins.html` and `site/en/origins.html`.
+- Typography, spacing, responsive behavior, and print layout: `site/book.css`.
 
-- `zh` — Chinese
-- `en` — English
+## Before publishing
 
-They share a TypeScript shape. If a field is added to only one language, the build fails.
+1. Update Chinese and English together.
+2. Verify every quotation against its linked source.
+3. Do not state that Marx proposed human-capital theory; he described labour-power within a different theory.
+4. Run `npm run build`.
+5. Open the files in `dist/` or print them to confirm the reading order.
 
-## Adding a new program
-
-1. Confirm that a real transcript or published page exists.
-2. Add the source to `docs/CONTENT_FOUNDATION.md`.
-3. In both `zh.programs` and `en.programs`, add the program type, title, synthesis, reusable ideas, repository source path, and a real public URL when one exists.
-4. Run the verification commands from `README.md`.
-
-Do not publish invented allocation percentages, experimental logs, performance claims, or placeholder links.
-
-## Updating a framework definition
-
-Change the canonical framework files in the parent content project first:
-
-- `../01_FRAMEWORK/HUMAN_CAPITAL_ETF.md`
-- `../01_FRAMEWORK/CORE.md`
-- `../01_FRAMEWORK/GROWTH.md`
-- `../01_FRAMEWORK/DISTRIBUTION.md`
-- `../01_FRAMEWORK/META.md`
-- `../01_FRAMEWORK/TERMINOLOGY_BILINGUAL.md`
-
-Then update both language objects in `content/siteContent.ts`.
-
-## External links
-
-Author and project URLs live in `config/siteConfig.ts`. Never use generic placeholders such as `youtube.com`, `x.com`, or `example.com`.
+Do not add images, embedded media, JavaScript, popups, forms, dashboards, fixed portfolio percentages, or invented results.

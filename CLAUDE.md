@@ -1,13 +1,18 @@
 # Website context
 
-This directory is the production codebase for humancapitaletf.com.
+This directory contains the production source for humancapitaletf.com.
 
-Read `README.md`, `ADMIN.md`, and `docs/CONTENT_FOUNDATION.md` before changing content or structure.
+The active site is the pure HTML/CSS book in `site/`. It has two pages per language: the Human Capital ETF framework and its intellectual origins. `npm run build` validates and copies this source to `dist/`.
 
-Core requirements:
+Requirements:
 
 - keep `/zh` and `/en` semantically aligned;
-- use real transcript and author sources;
+- keep the active site free of images, SVG, canvas, client JavaScript, frameworks, and remote fonts;
+- use serif body typography and restrained book-style layout;
+- preserve accurate source boundaries, especially between Marx's labour-power and modern human-capital theory;
+- use real primary or authoritative sources;
 - preserve the relationship between Human Capital ETF, The Worker Investor, and 69mike.com;
-- do not introduce invented data, reports, experiments, or placeholder links;
-- run `npm run typecheck`, `npm run lint`, `npm run build`, and `npm audit --omit=dev` before handoff.
+- do not introduce invented allocations, reports, experiments, or performance claims;
+- run `npm run build` before handoff.
+
+The older Next.js files are retained only as historical working material and are not included in the active build.
