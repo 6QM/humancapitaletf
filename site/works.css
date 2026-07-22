@@ -21,9 +21,14 @@ html {
 }
 
 body {
-  margin: 8px;
+  width: min(calc(100% - 16px), 900px);
+  margin: 8px auto;
   background: var(--paper);
   color: var(--ink);
+}
+
+section {
+  scroll-margin-top: 1rem;
 }
 
 a:link {
@@ -110,6 +115,27 @@ h4 {
   font-size: 14pt;
   line-height: 1.5;
   text-align: center;
+}
+
+h1.chapter-title,
+h2.section-number {
+  margin: 0.75rem 6%;
+  font-family: var(--display);
+  font-size: 22pt;
+  line-height: 1.5;
+  text-align: center;
+}
+
+h3.section-title,
+p.part-title {
+  margin: 0.75rem 6%;
+  color: var(--heading);
+  font-family: var(--sans);
+  font-size: 14pt;
+  font-weight: bold;
+  line-height: 1.5;
+  text-align: center;
+  text-indent: 0;
 }
 
 p {
@@ -283,6 +309,19 @@ blockquote footer {
   line-height: 1.4;
 }
 
+.operating-list {
+  margin: 0.75rem 10% 1.25rem;
+  padding-left: 1.5rem;
+  font-family: var(--serif);
+  font-size: 12pt;
+  line-height: 1.45;
+}
+
+.operating-list li {
+  margin-bottom: 0.55rem;
+  padding-left: 0.25rem;
+}
+
 .references li {
   margin-bottom: 0.7rem;
   padding-left: 0.25rem;
@@ -296,13 +335,15 @@ sup {
 
 @media (max-width: 480px) {
   body {
-    margin: 6px;
+    width: calc(100% - 12px);
+    margin: 6px auto;
   }
 
   p {
     margin: 0.35rem 1%;
     font-size: 12pt;
     line-height: 1.35;
+    text-align: left;
   }
 
   p.index {
@@ -347,7 +388,23 @@ sup {
     font-size: 13pt;
   }
 
-  .references {
+  h1.chapter-title,
+  h2.section-number {
+    margin-left: 1%;
+    margin-right: 1%;
+    font-size: 16pt;
+  }
+
+  h3.section-title,
+  p.part-title {
+    margin-left: 4%;
+    margin-right: 4%;
+    font-size: 12.5pt;
+    text-align: center;
+  }
+
+  .references,
+  .operating-list {
     margin-left: 5%;
     margin-right: 1%;
   }

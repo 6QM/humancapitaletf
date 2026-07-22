@@ -19,7 +19,9 @@ async function walk(directory) {
 const files = await walk(sourceRoot);
 const htmlFiles = files.filter((file) => file.endsWith('.html'));
 const forbidden = [/<img\b/i, /<svg\b/i, /<canvas\b/i, /<script\b/i, /background-image\s*:/i, /url\s*\(/i];
+const forbiddenLegacyCopy = [/16\s*%/i, /2\.1\s*[×x]/i, /example\.com/i, /Invest in Yourself Like an Index Fund/i];
 const chineseText = /[\u3400-\u9fff]/u;
+const canonicalOrigin = 'https://humancapitaletf.com';
 
 for (const file of files) {
   if (!/\.(html|css)$/.test(file)) continue;
@@ -27,6 +29,11 @@ for (const file of files) {
   for (const pattern of forbidden) {
     if (pattern.test(content)) {
       throw new Error(`Pure-text check failed in ${path.relative(projectRoot, file)}: ${pattern}`);
+    }
+  }
+  for (const pattern of forbiddenLegacyCopy) {
+    if (pattern.test(content)) {
+      throw new Error(`Legacy-copy check failed in ${path.relative(projectRoot, file)}: ${pattern}`);
     }
   }
   if (chineseText.test(content)) {
@@ -38,6 +45,21 @@ for (const file of htmlFiles) {
   const content = await readFile(file, 'utf8');
   if (!/<html\s+lang=/i.test(content) || !/<title>.+<\/title>/is.test(content)) {
     throw new Error(`Missing language or title in ${path.relative(projectRoot, file)}`);
+  }
+
+  const headingCount = [...content.matchAll(/<h1\b/gi)].length;
+  if (headingCount !== 1) {
+    throw new Error(`Expected exactly one h1 in ${path.relative(projectRoot, file)}; found ${headingCount}`);
+  }
+
+  const canonicalLinks = [...content.matchAll(/<link\b[^>]*\brel="canonical"[^>]*\bhref="([^"]+)"[^>]*>/gi)]
+    .map((match) => match[1]);
+  const relativeHtmlPath = path.relative(sourceRoot, file).split(path.sep).join('/');
+  const expectedCanonical = relativeHtmlPath === 'index.html'
+    ? `${canonicalOrigin}/`
+    : `${canonicalOrigin}/${relativeHtmlPath}`;
+  if (canonicalLinks.length !== 1 || canonicalLinks[0] !== expectedCanonical) {
+    throw new Error(`Canonical check failed in ${path.relative(projectRoot, file)}; expected ${expectedCanonical}`);
   }
 
   const ids = new Set([...content.matchAll(/\sid="([^"]+)"/g)].map((match) => match[1]));

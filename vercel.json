@@ -29,6 +29,41 @@
       "source": "/zh",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/framework/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/about/:path*",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/notes/:path*",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/programs/:path*",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/calculator/:path*",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/:path*",
+      "destination": "/",
+      "permanent": true
     }
   ]
 }
