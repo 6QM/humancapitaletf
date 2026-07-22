@@ -240,6 +240,18 @@ if (!robots.includes(`Sitemap: ${sitemapUrl}`)) {
   throw new Error('robots.txt does not declare the canonical sitemap');
 }
 
+const vercelConfig = JSON.parse(await readFile(path.join(projectRoot, 'vercel.json'), 'utf8'));
+const custom404Routes = vercelConfig.routes;
+if (
+  !Array.isArray(custom404Routes)
+  || custom404Routes[0]?.handle !== 'filesystem'
+  || custom404Routes.at(-1)?.src !== '/(.*)'
+  || custom404Routes.at(-1)?.status !== 404
+  || custom404Routes.at(-1)?.dest !== '/404.html'
+) {
+  throw new Error('vercel.json must preserve filesystem routing followed by the custom HTML 404');
+}
+
 await rm(outputRoot, { recursive: true, force: true });
 await mkdir(outputRoot, { recursive: true });
 await cp(sourceRoot, outputRoot, { recursive: true });
