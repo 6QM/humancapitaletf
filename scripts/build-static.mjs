@@ -241,15 +241,13 @@ if (!robots.includes(`Sitemap: ${sitemapUrl}`)) {
 }
 
 const vercelConfig = JSON.parse(await readFile(path.join(projectRoot, 'vercel.json'), 'utf8'));
-const custom404Routes = vercelConfig.routes;
 if (
-  !Array.isArray(custom404Routes)
-  || custom404Routes[0]?.handle !== 'filesystem'
-  || custom404Routes.at(-1)?.src !== '/(.*)'
-  || custom404Routes.at(-1)?.status !== 404
-  || custom404Routes.at(-1)?.dest !== '/404.html'
+  vercelConfig.buildCommand !== 'npm run build'
+  || vercelConfig.outputDirectory !== 'dist'
+  || 'builds' in vercelConfig
+  || 'routes' in vercelConfig
 ) {
-  throw new Error('vercel.json must preserve filesystem routing followed by the custom HTML 404');
+  throw new Error('vercel.json must use the modern static build/output configuration so Vercel can discover 404.html');
 }
 
 await rm(outputRoot, { recursive: true, force: true });
