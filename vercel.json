@@ -36,7 +36,17 @@
       "permanent": true
     },
     {
+      "source": "/framework/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/about/:path*",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/about/",
       "destination": "/origins.html",
       "permanent": true
     },
@@ -46,7 +56,17 @@
       "permanent": true
     },
     {
+      "source": "/notes/",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
       "source": "/programs/:path*",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/programs/",
       "destination": "/operating-system.html",
       "permanent": true
     },
@@ -56,12 +76,27 @@
       "permanent": true
     },
     {
+      "source": "/calculator/",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
       "source": "/en/:path*",
       "destination": "/",
       "permanent": true
     },
     {
+      "source": "/en/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/zh/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/",
       "destination": "/",
       "permanent": true
     }
