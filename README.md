@@ -2,14 +2,15 @@
 
 The English canonical text of the Human Capital ETF framework.
 
-The active website contains three document-style pages:
+The active website is a three-part open book:
 
-- `site/index.html` — the canonical definition, capital layers, boundaries, and four positions;
-- `site/origins.html` — the personal and intellectual origins, including Becker's portability distinction;
-- `site/operating-system.html` — inventory, the asset test, allocation policy, rebalancing, and asset migration;
-- `site/works.css` — the complete text-first visual system.
+- `site/index.html` — canonical definition, Allocation Ledger, four functional positions, and boundaries;
+- `site/origins.html` — personal and intellectual origins, including Smith, Marx, Schultz, and Becker;
+- `site/operating-system.html` — inventory, asset status, one-page policy, rebalancing, mechanisms, and a worked engineering case;
+- `site/404.html` — a noindex text-only error page;
+- `site/works.css` — the complete book and archive visual system.
 
-The design follows the conventions of online primary-source archives: white paper, dark-blue chapter headings, serif body text, inline contents, section rules, footnotes, and ordinary text links. There are no images, client-side scripts, frameworks, remote fonts, forms, dashboards, or product-interface elements in the published site.
+The design follows online primary-source archives: white paper, dark chapter headings, serif body text, inline contents, section rules, source notes, and ordinary text links. There are no images, client-side scripts, frameworks, remote fonts, forms, dashboards, calculators, or product-interface elements.
 
 ## Local reading
 
@@ -25,14 +26,22 @@ Open `http://localhost:3000`.
 npm run build
 ```
 
-The build verifies that the active pages are English-only, have one correct canonical URL and one primary heading, exclude old calculator claims, and contain no images, SVG, canvas, scripts, CSS background images, or remote font assets. It writes the finished static site to `dist/`.
+The build validates the active source before copying it to `dist/`. Among other checks, it enforces:
 
-## Editorial rules
+- English-only HTML and CSS;
+- an allowlist of text document file types;
+- one H1, one main region, shared series navigation, metadata, and exact canonicals;
+- unique titles, descriptions, and element IDs;
+- valid same-page and cross-page fragments;
+- sitemap parity with all indexable canonical pages;
+- a noindex, non-canonical 404 page;
+- no images, media, scripts, forms, inline handlers, remote fonts, or legacy calculator claims.
 
-- Treat ETF as an allocation metaphor, not a financial product.
-- Do not add a universal fixed allocation.
-- Distinguish inputs, embodied human capital, enabling or externalized assets, and return flows.
-- Treat Meta as the governance position, not an ordinary asset basket.
-- Preserve the distinction between Marx's concept of labour-power and modern human-capital theory.
-- Use primary or authoritative sources for historical claims and quotations.
-- Keep the site readable, printable, and useful without JavaScript.
+## Canonical model
+
+- The **Allocation Ledger** describes what something is: inputs, embodied stocks, enabling stocks, externalized stocks, return flows, outcomes, constraints, and exposures.
+- The four **positions** describe what an allocation is doing now: Core, Growth, Distribution, or Meta.
+- The **operating policy** describes which evidence changes the next allocation.
+- Migration changes a capability's function; conversion creates another stock; returns enter as flows; reinvestment begins the next allocation.
+
+The older Next.js files remain historical working material and are not part of the active build.

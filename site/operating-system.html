@@ -3,124 +3,144 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="The operating system of Human Capital ETF: inventory, asset test, allocation policy, rebalancing, and asset migration.">
-  <title>Portfolio Construction and Rebalancing — Human Capital ETF</title>
+  <meta name="description" content="The operating policy of Human Capital ETF: inventory, asset status, allocation policy, rebalancing, and a first portfolio cycle.">
+  <meta name="author" content="Qiaomai Liu">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:site_name" content="Human Capital ETF">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Operating Policy — Human Capital ETF">
+  <meta property="og:description" content="A practical policy for inventorying, allocating, reviewing, and rebalancing a worker's portfolio.">
+  <meta property="og:url" content="https://humancapitaletf.com/operating-system.html">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Operating Policy — Human Capital ETF">
+  <meta name="twitter:description" content="A practical policy for inventorying, allocating, reviewing, and rebalancing a worker's portfolio.">
+  <title>Operating Policy — Human Capital ETF</title>
   <link rel="canonical" href="https://humancapitaletf.com/operating-system.html">
+  <link rel="author" href="https://69mike.com">
+  <link rel="prev" href="https://humancapitaletf.com/origins.html">
   <link rel="stylesheet" href="./works.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the text</a>
 
-  <header>
-    <p class="title">Qiaomai Liu. Human Capital ETF</p>
-    <hr class="end">
-    <p class="part-title">Part III: Portfolio Construction and Rebalancing</p>
-    <hr class="end">
-    <h1 class="chapter-title">Chapter One: From Framework to Operating Policy</h1>
-    <hr class="end">
+  <header class="frontispiece">
+    <p class="imprint"><a href="./" rel="home">Human Capital ETF</a> · Qiaomai Liu</p>
+    <nav class="series-nav" aria-label="Human Capital ETF parts">
+      [ <a href="./">Part I: Framework</a> · <a href="./origins.html">Part II: Origins</a> · <a href="./operating-system.html" aria-current="page">Part III: Operating Policy</a> ]
+    </nav>
+    <hr class="end" aria-hidden="true">
+    <p class="part-title">Part III · Portfolio Construction and Rebalancing</p>
+    <h1>From Evidence to Allocation Policy</h1>
+    <p class="edition">Fourth edition · <time datetime="2026-07-22">22 July 2026</time></p>
+    <hr class="end" aria-hidden="true">
   </header>
 
-  <main id="main">
-    <nav aria-label="Contents">
-      <p class="toc">Contents</p>
-      <p class="index">
-        <a href="#preface">Preface — Begin With Evidence</a><br>
-        Section 1 — <a href="#inventory">Inventory</a><br>
-        Section 2 — <a href="#asset-test">The Asset Test</a><br>
-        Section 3 — <a href="#allocation-policy">Allocation Policy</a><br>
-        Section 4 — <a href="#rebalancing">Rebalancing</a><br>
-        Section 5 — <a href="#migration">Asset Migration</a><br>
-        Section 6 — <a href="#first-cycle">The First Portfolio Cycle</a>
-      </p>
+  <main id="main" tabindex="-1">
+    <nav class="contents" aria-label="Contents of Part III">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#evidence">Preface · Begin with Evidence</a></li>
+        <li><a href="#inventory"><span>Section 1.</span> Inventory the Allocation Ledger</a></li>
+        <li><a href="#asset-status"><span>Section 2.</span> Asset Status and Risk Flags</a></li>
+        <li><a href="#allocation-policy"><span>Section 3.</span> The One-Page Allocation Policy</a></li>
+        <li><a href="#rebalancing"><span>Section 4.</span> Observation and Rebalancing</a></li>
+        <li><a href="#mechanisms"><span>Section 5.</span> Migration, Conversion, Returns, and Reinvestment</a></li>
+        <li><a href="#engineering-case"><span>Section 6.</span> A Worked Engineering Case</a></li>
+        <li><a href="#first-cycle"><span>Section 7.</span> The First Portfolio Cycle</a></li>
+      </ol>
     </nav>
 
-    <section id="preface">
-      <hr class="section">
-      <h2 class="section-number">PREFACE.</h2>
-      <h3 class="section-title">BEGIN WITH EVIDENCE</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="evidence">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Preface.</span><span class="section-title">Begin with Evidence</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
       <p>A framework becomes an operating system only when it changes a real allocation. Begin with evidence, not an ideal identity: the last four weeks of calendars, recovery, spending, work, learning, output, and unfinished commitments.</p>
-      <p>One page is enough for the first cycle. A dashboard can come later. Do not begin by inventing a perfect percentage for each position. Begin by seeing where resources already went, what they produced, and what risk is concentrated in one place.</p>
+      <p>One page is enough for the first cycle. Do not begin by inventing a perfect percentage for each position. Begin by seeing where resources already went, what persisted, and what risk is concentrated in one place.</p>
       <blockquote>
-        <p class="quote">The first rebalance begins with an honest inventory, not a new ambition.</p>
+        <p>The first rebalance begins with an honest inventory, not a new ambition.</p>
       </blockquote>
     </section>
 
     <section id="inventory">
-      <hr class="section">
-      <h2 class="section-number">SECTION 1.</h2>
-      <h3 class="section-title">INVENTORY</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 1.</span><span class="section-title">Inventory the Allocation Ledger</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>Inventory what exists before deciding what should exist. Record five layers.</p>
+      <p>Use the same ledger as Part I. Record what exists before deciding what should exist.</p>
       <dl class="term-list">
-        <div><dt>Embodied Human Capital</dt><dd>Health, recovery, professional capability, transferable skills, learning capacity, and judgment.</dd></div>
-        <div><dt>Enabling and Externalized Assets</dt><dd>Financial buffer, tools, systems, reusable artifacts, reputation, relationships, and controlled channels.</dd></div>
-        <div><dt>Flows</dt><dd>Income, spending, feedback, opportunities, and recurring demands on time and energy.</dd></div>
-        <div><dt>Liabilities and Constraints</dt><dd>Health debt, financial obligations, unfinished commitments, family responsibilities, access limits, and contractual boundaries.</dd></div>
-        <div><dt>Concentration Exposures</dt><dd>Dependence on one employer, skill, internal system, platform, credential, country, income source, or identity.</dd></div>
+        <div><dt>Allocable Inputs</dt><dd>Time, usable energy, attention, and allocable cash observed over the last four weeks.</dd></div>
+        <div><dt>Embodied Stocks</dt><dd>Health and capabilities retained in the person.</dd></div>
+        <div><dt>Enabling Stocks</dt><dd>A financial buffer, tools, and systems under meaningful control.</dd></div>
+        <div><dt>Externalized Stocks</dt><dd>Controlled artifacts and documented methods that can be reused.</dd></div>
+        <div><dt>Return Flows</dt><dd>Income, feedback, and opportunities entering the system.</dd></div>
+        <div><dt>Outcomes</dt><dd>Present resilience, autonomy, and optionality.</dd></div>
+        <div><dt>Constraints and Exposures</dt><dd>Health debt, financial obligations, family responsibilities, contractual boundaries, and dependence on one employer, skill, platform, credential, country, income source, or identity.</dd></div>
       </dl>
       <p>A constraint is not a personal failure. It is a condition the policy must respect. A portfolio that ignores health, debt, caregiving, law, or employment obligations is not ambitious; it is mis-specified.</p>
-      <p>After the inventory, assign each item to its current primary function: Core, Growth, Distribution, or Meta. Do not force a permanent classification. The same capability may serve a different function after its maturity, use, or context changes.</p>
-      <p class="question">Inventory question: What do I own or control, what only passes through me, and what can be taken away by one decision outside my control?</p>
+      <p>Do not force return flows, constraints, or exposures into Core, Growth, Distribution, or Meta. The positions classify what an allocation is doing; the ledger classifies what kind of thing is being observed.</p>
+      <p class="question">What do I control, what only passes through me, and what can be taken away by one decision outside my control?</p>
     </section>
 
-    <section id="asset-test">
-      <hr class="section">
-      <h2 class="section-number">SECTION 2.</h2>
-      <h3 class="section-title">THE ASSET TEST</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="asset-status">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 2.</span><span class="section-title">Asset Status and Risk Flags</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>An activity can be useful without yet being an asset. Before placing the result on the asset side of the ledger, ask:</p>
+      <p>An activity can be useful without yet producing an asset. Test status first; then assess quality and risk.</p>
+      <h3>Asset status</h3>
       <ol class="operating-list">
-        <li>Does anything remain after the labor is complete?</li>
-        <li>Is it owned or meaningfully controlled by the worker?</li>
-        <li>Can it be reused without being recreated from zero?</li>
-        <li>Can it retain value in another employer, industry, platform, or environment?</li>
-        <li>Has it produced stronger capability, a reusable artifact, income resilience, feedback, or opportunity?</li>
+        <li>What persists after the immediate task is complete?</li>
+        <li>Where does it reside: in the person, in a controlled system, or in someone else's system?</li>
+        <li>Who owns or meaningfully controls it?</li>
+        <li>Can it be deployed or used again without being recreated from zero?</li>
       </ol>
-      <p>A course may be an input. A capability demonstrated in repeated work may be embodied human capital. A documented tool may be an externalized asset. Reach on a rented platform is not the same as ownership or control. A paycheck is a return flow; the financial buffer retained from it is an enabling asset.</p>
+      <h3>Risk and quality flags</h3>
+      <dl class="term-list">
+        <div><dt>Portability</dt><dd>How much value remains outside the present employer, industry, platform, or country?</dd></div>
+        <div><dt>Maintenance</dt><dd>What recurring time, energy, money, practice, or access keeps it useful?</dd></div>
+        <div><dt>Decay</dt><dd>How quickly could nonuse, impaired health, or changing tools and institutions reduce its value?</dd></div>
+        <div><dt>Concentration</dt><dd>Which employer, system, person, credential, or context can impair it?</dd></div>
+        <div><dt>Evidence of Usefulness</dt><dd>Where has it improved delivery, created a reusable result, or generated verified feedback?</dd></div>
+      </dl>
+      <p>A course may be an input. A capability demonstrated in repeated work may be an embodied stock. A documented tool may be an externalized stock. A paycheck is a return flow; the financial buffer retained from it is an enabling stock. Firm-specific capability can qualify as an asset while still carrying high concentration risk.</p>
       <p class="boundary"><strong>Employment and ownership boundary.</strong> Employer-confidential information and employer-owned intellectual property do not become personal assets merely because a worker helped create them. Externalize the transferable method, not protected data, code, documents, designs, or customer information.</p>
-      <p>Failing one test does not make an activity worthless. It shows what is missing. Some work maintains Core. Some learning is exploration. Some care and rest need no asset justification at all. The test prevents an input, activity, result, and return from being counted as the same thing.</p>
+      <p class="boundary"><strong>Relationship boundary.</strong> Professional trust, reputation, and reciprocal access can matter to the portfolio, but other people and relationships are not owned assets. Record them as co-maintained social-capital signals, not owned stocks; record the opportunities they produce as return flows.</p>
     </section>
 
     <section id="allocation-policy">
-      <hr class="section">
-      <h2 class="section-number">SECTION 3.</h2>
-      <h3 class="section-title">ALLOCATION POLICY</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 3.</span><span class="section-title">The One-Page Allocation Policy</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>Human Capital ETF provides no universal ratio. A useful policy is one page long and specific to the worker's present stage, risks, obligations, and evidence.</p>
-      <dl class="term-list">
-        <div><dt>Current Stage</dt><dd>The life and career condition for which this policy is written.</dd></div>
-        <div><dt>Principal at Risk</dt><dd>The health, income, employability, credibility, or financial-buffer weakness that could impair the whole system.</dd></div>
-        <div><dt>Core Obligation</dt><dd>What must be protected or restored before expansion is increased.</dd></div>
-        <div><dt>Growth Thesis</dt><dd>One capability or project expected to widen future choice, and the evidence that would validate it.</dd></div>
-        <div><dt>Distribution Commitment</dt><dd>One safe form in which useful capability will be externalized and tested.</dd></div>
-        <div><dt>Meta Review Rule</dt><dd>The evidence, date, and decision owner for the next review.</dd></div>
-        <div><dt>Position Priority</dt><dd>The position that receives marginal time, energy, attention, or money first in this phase.</dd></div>
-        <div><dt>Exploration Budget</dt><dd>The maximum loss of time, energy, or money permitted for uncertain experiments.</dd></div>
-        <div><dt>Constraints</dt><dd>Health, family, financial, legal, employment, and access conditions the policy must respect.</dd></div>
-        <div><dt>Not Pursued</dt><dd>Projects, platforms, courses, or identities that will receive no allocation during this policy period.</dd></div>
-        <div><dt>Stop or Exit Triggers</dt><dd>The evidence that will reduce, suspend, or end an allocation.</dd></div>
-      </dl>
+      <p>Human Capital ETF provides no universal ratio. A useful policy is specific to the worker's present stage, binding constraint, obligations, and evidence. Write only one marginal priority for the period.</p>
       <blockquote>
-        <p class="quote">An allocation policy is meaningful only when it excludes something.</p>
+        <p>An allocation policy is meaningful only when it excludes something.</p>
       </blockquote>
-      <p>The policy should enter the calendar and budget. A declared priority with no protected time, no resource limit, and no stop rule is a preference, not an allocation.</p>
+
+      <section class="policy-sheet" aria-labelledby="policy-template-title">
+        <h3 id="policy-template-title">Human Capital ETF · One-Page Policy</h3>
+        <p class="policy-instruction">Print or copy this template. Complete each line in plain language.</p>
+        <dl>
+          <div><dt>1. Policy period and current stage</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>2. Binding constraint and Core floor</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>3. One marginal allocation priority</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>4. Inputs committed and where they come from</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>5. Evidence expected by the review date</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>6. Maintenance, concentration, stop, and exit risks</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>7. Not pursued during this period</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+          <div><dt>8. Review date</dt><dd><span class="write-line" aria-hidden="true"></span><span class="visually-hidden">Blank line to complete.</span></dd></div>
+        </dl>
+      </section>
+
+      <p>The policy should enter the calendar and budget. A declared priority with no protected time, no resource limit, and no stop rule is a preference, not an allocation. Opportunity cost belongs in the policy: name what will receive less because this priority receives more.</p>
     </section>
 
     <section id="rebalancing">
-      <hr class="section">
-      <h2 class="section-number">SECTION 4.</h2>
-      <h3 class="section-title">REBALANCING</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 4.</span><span class="section-title">Observation and Rebalancing</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
       <p>Rebalancing is not constant change. It separates observation from intervention so that a temporary fluctuation does not become a new life strategy.</p>
       <dl class="term-list">
@@ -128,71 +148,84 @@
         <div><dt>Quarterly Rebalance</dt><dd>Add, increase, maintain, reduce, migrate, or exit projects and commitments according to accumulated evidence.</dd></div>
         <div><dt>Annual Policy Review</dt><dd>Reconsider life stage, health, career direction, family responsibility, constraints, portfolio purpose, and the rules themselves.</dd></div>
       </dl>
-      <p>Evidence can trigger an earlier review: sustained deterioration in recovery; a financial buffer crossing its minimum threshold; a Growth capability succeeding in repeated delivery; verified Distribution feedback; a change in employment conditions; or firm-specific exposure becoming too large to survive.</p>
-      <dl class="term-list">
-        <div><dt>Add</dt><dd>A missing exposure or mechanism now deserves an initial allocation.</dd></div>
-        <div><dt>Increase</dt><dd>Evidence is stronger and justifies more resources.</dd></div>
-        <div><dt>Maintain</dt><dd>The position is functioning and needs no reactive change.</dd></div>
+      <p>Evidence can trigger an earlier review: sustained deterioration in recovery; a financial buffer crossing its minimum threshold; a capability succeeding in repeated delivery; verified Distribution feedback; a change in employment conditions; or firm-specific exposure becoming too large for the worker to survive its loss.</p>
+      <dl class="term-list compact-terms">
+        <div><dt>Add</dt><dd>A missing mechanism deserves an initial allocation.</dd></div>
+        <div><dt>Increase</dt><dd>Stronger evidence justifies more resources.</dd></div>
+        <div><dt>Maintain</dt><dd>The allocation is functioning and needs no reactive change.</dd></div>
         <div><dt>Reduce</dt><dd>Cost, risk, or declining usefulness no longer justifies the present allocation.</dd></div>
         <div><dt>Exit</dt><dd>The thesis has failed, the constraint has changed, or the project no longer belongs in the policy.</dd></div>
       </dl>
-      <p class="question">Rebalancing question: What changed in the evidence—not merely in my mood?</p>
+      <p class="question">What changed in the evidence—not merely in my mood?</p>
     </section>
 
-    <section id="migration">
-      <hr class="section">
-      <h2 class="section-number">SECTION 5.</h2>
-      <h3 class="section-title">ASSET MIGRATION</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="mechanisms">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 5.</span><span class="section-title">Migration, Conversion, Returns, and Reinvestment</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <blockquote>
-        <p class="quote">Migration is a change in function, not a promotion in status.</p>
-      </blockquote>
       <dl class="term-list">
-        <div><dt>Growth to Core</dt><dd>A capability becomes reliable in repeated delivery and now protects employability, quality, or income continuity.</dd></div>
-        <div><dt>Core to Distribution</dt><dd>Tacit experience is safely externalized into an artifact that others can find, verify, and use.</dd></div>
-        <div><dt>Distribution to Supporting Assets</dt><dd>Useful artifacts build reputation, relationships, and controlled channels.</dd></div>
-        <div><dt>Distribution to Returns</dt><dd>Those assets generate feedback, opportunity, autonomy, or income.</dd></div>
-        <div><dt>Returns to Core or Growth</dt><dd>Money, feedback, and opportunity are reinvested in recovery, a financial buffer, professional capacity, or the next capability.</dd></div>
-        <div><dt>Meta to the Next Allocation</dt><dd>The governance layer reads the migration evidence and changes the policy.</dd></div>
+        <div><dt>Migration</dt><dd>The same capability changes its primary function. Python may migrate from Growth to Core after repeated professional deployment.</dd></div>
+        <div><dt>Conversion</dt><dd>Embodied capability produces a distinct externalized stock that the worker meaningfully controls. Core engineering knowledge does not leave Core when it produces an essay or method; it creates another asset.</dd></div>
+        <div><dt>Return</dt><dd>An asset generates income, feedback, or opportunity. The flow should not be double-counted as the asset that produced it.</dd></div>
+        <div><dt>Reinvestment</dt><dd>A return is allocated to recovery, a financial buffer, maintenance, or the next capability.</dd></div>
       </dl>
-      <p>Migration prevents double counting. An essay is not simultaneously the skill that produced it, the reputation it may build, the feedback it receives, and the income that might follow. Each belongs to a different layer, even when one causal chain connects them.</p>
+      <p>These distinctions preserve the ledger. An essay is not simultaneously the skill that produced it, the reputation it may build, the feedback it receives, and the income that might follow. One causal chain can contain different stocks, flows, functions, and decisions.</p>
+      <blockquote>
+        <p>Migration changes function. Conversion creates another stock. Returns enter as flows. Reinvestment begins the next allocation.</p>
+      </blockquote>
+    </section>
+
+    <section id="engineering-case">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 6.</span><span class="section-title">A Worked Engineering Case</span></h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <p>In my first year as an engineer, a repeated fastener-replacement workflow was slow and error-prone. The allocation to completing assigned projects served Core: present delivery had to remain reliable. Learning enough Python to automate the pattern began in Growth.</p>
+      <p>The first script worked. I later rewrote it, packaged it for the company's internal software library, documented its use, and trained colleagues. Their requests exposed new needs and led to another iteration. The loop was simple: problem, tool, distribution, feedback, revision.</p>
+      <p>The ledger prevents a false claim of ownership. The internal executable, documentation, and protected workflow remained inside the employer's boundary; they were not automatically my personal externalized stocks. What remained embodied in me was the more portable capability to decompose an engineering problem, automate a repeated process, document a method, teach its use, and learn from feedback.</p>
+      <p>A non-confidential account of that method can later be converted into a separate Distribution asset. Feedback, trust, and new requests are returns. If Python becomes reliable in repeated professional delivery, the capability migrates from Growth toward Core. Meta decides whether that evidence justifies the next allocation.</p>
+      <p class="source-note">This case is condensed from the author's account of his first year at work. Product details, code, and employer-confidential information are intentionally excluded.</p>
     </section>
 
     <section id="first-cycle">
-      <hr class="section">
-      <h2 class="section-number">SECTION 6.</h2>
-      <h3 class="section-title">THE FIRST PORTFOLIO CYCLE</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 7.</span><span class="section-title">The First Portfolio Cycle</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>Start tomorrow with six decisions.</p>
+      <p>A cycle does not need to advance every position. If Core is impaired, protecting or restoring Core may be the entire policy for that period. Meta exists to make that trade-off explicit.</p>
+      <p>Start with six decisions.</p>
       <ol class="operating-list">
         <li>Review the last four weeks of actual allocation.</li>
-        <li>Name one immediate threat to Core.</li>
-        <li>Select one portable Growth capability to test in a real project.</li>
-        <li>Externalize one non-confidential method or artifact through Distribution.</li>
-        <li>Write one rebalance trigger and one review date.</li>
-        <li>Stop one activity that consumes inputs without supporting the current policy.</li>
+        <li>Name the binding constraint and the minimum Core floor.</li>
+        <li>Choose one marginal priority. It may be Core, Growth, Distribution, or Meta.</li>
+        <li>Assign specific inputs and name their opportunity cost.</li>
+        <li>Write the evidence, stop condition, and review date before beginning.</li>
+        <li>Decline one competing activity that does not support this policy.</li>
       </ol>
       <p>The first ninety days can then run as one complete cycle.</p>
       <dl class="term-list">
-        <div><dt>Month One</dt><dd>Complete the inventory, identify the principal at risk, and write the one-page allocation policy.</dd></div>
-        <div><dt>Month Two</dt><dd>Run one full loop: learn, deploy, externalize, receive feedback, and review.</dd></div>
-        <div><dt>Month Three</dt><dd>Perform the first rebalance: add or increase one item, maintain one, reduce or exit one, and migrate one only if the evidence supports it.</dd></div>
+        <div><dt>Month One</dt><dd>Complete the ledger, identify the binding constraint, and write the one-page policy.</dd></div>
+        <div><dt>Month Two</dt><dd>Protect the Core floor and run the chosen marginal allocation in real conditions.</dd></div>
+        <div><dt>Month Three</dt><dd>Compare evidence with the policy. Maintain, increase, reduce, exit, or migrate only what the record supports.</dd></div>
       </dl>
       <p>Do not attempt to design an entire life in ninety days. The purpose is to make Human Capital ETF operate once, leave a record, and improve the next allocation.</p>
       <blockquote>
-        <p class="quote">The goal is not to optimize every hour. It is to make the next allocation more deliberate and the future less fragile.</p>
+        <p>The goal is not to optimize every hour. It is to make the next allocation more deliberate and the future less fragile.</p>
       </blockquote>
     </section>
   </main>
 
-  <footer>
-    <hr class="end">
-    <p class="next"><a href="./">Return to the Canonical Definition</a></p>
-    <p class="footer">[ <a href="./">Framework</a> | <a href="./origins.html">Intellectual Origins</a> | <a href="./operating-system.html">Operating System</a> | <a href="https://69mike.com">Author</a> ]</p>
+  <footer class="book-footer">
+    <hr class="end" aria-hidden="true">
+    <nav class="folio-nav" aria-label="Continue reading">
+      <a href="./origins.html" rel="prev">← Previous: Intellectual Origins</a>
+      <span>Part III of III</span>
+      <a href="./" rel="home">Return to Framework →</a>
+    </nav>
+    <nav class="series-nav" aria-label="Human Capital ETF links">
+      [ <a href="./">Framework</a> · <a href="./origins.html">Origins</a> · <a href="./operating-system.html" aria-current="page">Operating Policy</a> · <a href="https://69mike.com" rel="author">Author</a> ]
+    </nav>
     <p class="pagenote">Begin with evidence. Change allocation only when evidence, risk, or obligation changes.</p>
   </footer>
 </body>

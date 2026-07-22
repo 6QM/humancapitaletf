@@ -4,200 +4,214 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="The canonical definition of Human Capital ETF: a personal allocation framework for Core, Growth, Distribution, and Meta.">
-  <title>Human Capital ETF — Canonical Definition and Four Positions</title>
+  <meta name="author" content="Qiaomai Liu">
+  <meta name="robots" content="index,follow">
+  <meta name="theme-color" content="#ffffff">
+  <meta property="og:site_name" content="Human Capital ETF">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Human Capital ETF — Canonical Framework">
+  <meta property="og:description" content="A worker's framework for converting present labor into durable assets and future optionality.">
+  <meta property="og:url" content="https://humancapitaletf.com/">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Human Capital ETF — Canonical Framework">
+  <meta name="twitter:description" content="A worker's framework for converting present labor into durable assets and future optionality.">
+  <title>Human Capital ETF — Canonical Framework</title>
   <link rel="canonical" href="https://humancapitaletf.com/">
+  <link rel="author" href="https://69mike.com">
+  <link rel="next" href="https://humancapitaletf.com/origins.html">
   <link rel="stylesheet" href="./works.css">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to the text</a>
 
-  <header>
-    <p class="title">Qiaomai Liu. Human Capital ETF</p>
-    <hr class="end">
-    <p class="part-title">Part I: A Framework for Personal Capital Allocation</p>
-    <hr class="end">
-    <h1 class="chapter-title">Chapter One: Build Yourself Like a Diversified Portfolio</h1>
-    <hr class="end">
+  <header class="frontispiece">
+    <p class="imprint"><a href="./" rel="home">Human Capital ETF</a> · Qiaomai Liu</p>
+    <nav class="series-nav" aria-label="Human Capital ETF parts">
+      [ <a href="./" aria-current="page">Part I: Framework</a> · <a href="./origins.html">Part II: Origins</a> · <a href="./operating-system.html">Part III: Operating Policy</a> ]
+    </nav>
+    <hr class="end" aria-hidden="true">
+    <p class="part-title">Part I · A Framework for Personal Capital Allocation</p>
+    <h1>Build Yourself Like a Diversified Portfolio</h1>
+    <p class="edition">Fourth edition · <time datetime="2026-07-22">22 July 2026</time></p>
+    <hr class="end" aria-hidden="true">
   </header>
 
-  <main id="main">
-    <nav aria-label="Contents">
-      <p class="toc">Contents</p>
-      <p class="index">
-        <a href="#preface">Preface — What Remains Between Two Paydays?</a><br>
-        Section 1 — <a href="#definition">Canonical Definition</a><br>
-        Section 2 — <a href="#capital-structure">The Capital Structure</a><br>
-        Section 3 — <a href="#core">Core: Protect the Principal</a><br>
-        Section 4 — <a href="#growth">Growth: Expand Optionality</a><br>
-        Section 5 — <a href="#distribution">Distribution: Externalize Value</a><br>
-        Section 6 — <a href="#meta">Meta: Govern and Rebalance</a><br>
-        Section 7 — <a href="#portfolio">The Whole Portfolio</a><br>
-        Section 8 — <a href="#not">What HCE Is Not</a><br>
-        <a href="#references">Notes and References</a>
-      </p>
+  <main id="main" tabindex="-1">
+    <nav class="contents" aria-label="Contents of Part I">
+      <p class="toc-label">Contents</p>
+      <ol>
+        <li><a href="#paydays">Preface · What Remains Between Two Paydays?</a></li>
+        <li><a href="#definition"><span>Section 1.</span> Canonical Definition</a></li>
+        <li><a href="#ledger"><span>Section 2.</span> The Allocation Ledger</a></li>
+        <li><a href="#core"><span>Section 3.</span> Core · Protect the Principal</a></li>
+        <li><a href="#growth"><span>Section 4.</span> Growth · Build Optionality</a></li>
+        <li><a href="#distribution"><span>Section 5.</span> Distribution · Bring Value into the World</a></li>
+        <li><a href="#meta"><span>Section 6.</span> Meta · Rebalance</a></li>
+        <li><a href="#portfolio"><span>Section 7.</span> The Portfolio Loop</a></li>
+        <li><a href="#not-hce"><span>Section 8.</span> What HCE Is Not</a></li>
+        <li><a href="#reading"><span>Section 9.</span> Reading Paths</a></li>
+        <li><a href="#references">Notes and References</a></li>
+      </ol>
     </nav>
 
-    <section id="preface">
-      <hr class="section">
-      <h2 class="section-number">PREFACE.</h2>
-      <h3 class="section-title">WHAT REMAINS BETWEEN TWO PAYDAYS?</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="paydays">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Preface.</span><span class="section-title">What Remains Between Two Paydays?</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
       <p>A worker completes a month of work and receives a paycheck. The next month, the exchange begins again. Wages settle labor once, but they should not be everything that labor leaves behind.</p>
-      <p>Between two paydays, a person may also keep a stronger capability, a reusable method, a public artifact, a trustworthy relationship, or better judgment. When these can be retained, controlled, and used again, labor does not reset to zero on payday.</p>
-      <p>This is where Human Capital ETF begins. It does not ask how many tasks were completed. It asks where finite time, energy, attention, and money went, and what remains after the labor is complete.</p>
-      <p>The question emerged after I had spent serious time studying companies, buying stocks, and trying to improve financial returns. I managed financial investments as a portfolio, yet treated reading, learning tools, writing, and new projects as disconnected activities. The missing object of attention was the set of capabilities that would determine whether I could keep working, learning, creating, and adapting for decades.<sup><a href="#ref-origin">1</a></sup></p>
-      <blockquote>
-        <p class="quote">Financial investing asks how money grows. Human-capital investing asks how a person grows.</p>
-      </blockquote>
+      <p>Between two paydays, a person may also keep stronger health, a deeper capability, a reusable method, a controlled artifact, or better judgment. When something useful persists and can be deployed again, labor does not reset to zero on payday.</p>
+      <p><dfn>Worker</dfn> means anyone whose present livelihood still depends substantially on continuing labor, whether salaried, contracted, or self-employed. Human Capital ETF begins from the worker's finite inputs: time, usable energy, attention, and allocable cash.</p>
+      <p>Its aim is <dfn>durable optionality</dfn>: more than one viable way to earn, learn, contribute, or exit—and enough health, capability, credibility, and buffer to act before a shock makes the decision for you.</p>
       <p>The framework accepts real constraints. Health, opportunity, family obligations, institutions, and social conditions differ. HCE is a language for improving allocation within those conditions, not a theory that blames every outcome on the individual.</p>
     </section>
 
     <section id="definition">
-      <hr class="section">
-      <h2 class="section-number">SECTION 1.</h2>
-      <h3 class="section-title">CANONICAL DEFINITION</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 1.</span><span class="section-title">Canonical Definition</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <blockquote>
-        <p class="quoteb"><strong>Human Capital ETF is a personal allocation framework for directing limited time, energy, attention, and money across four functional positions—Core, Growth, Distribution, and Meta—so that a worker can convert present labor into durable assets and gradually build future optionality.</strong></p>
+      <blockquote class="canonical-definition">
+        <p><strong>Human Capital ETF is a personal allocation framework for directing limited time, energy, attention, and money across four functional positions—Core, Growth, Distribution, and Meta—so that a worker can convert present labor into durable assets and gradually build future optionality.</strong></p>
       </blockquote>
-      <p>Durable does not mean permanent. An asset is durable here when something useful remains after the immediate task: an embodied capability, a controlled and reusable artifact, or a supporting asset. Returns may finance the next cycle, but they are recorded separately. Every asset still requires maintenance and may lose value.</p>
+      <p>Durable does not mean permanent. An asset is durable here when something useful remains after the immediate task: an embodied capability, a controlled and reusable artifact, or a supporting asset. Every asset still requires maintenance and may lose value.</p>
       <p>Core, Growth, Distribution, and Meta are functions, not permanent categories. English may be Core when present work requires it, Growth when it opens a new path, and Distribution when it carries public work into a wider world.</p>
       <blockquote>
-        <p class="quoteb"><strong>The Worker Investor is the identity transition. Human Capital ETF is the operating system.</strong><br><br>The Worker Investor asks why an ordinary worker should convert wages, experience, skills, time, and judgment into assets. Human Capital ETF explains how those assets should be allocated, developed, distributed, monitored, and rebalanced.</p>
+        <p><strong>The Worker Investor is the identity transition. Human Capital ETF is the operating system.</strong></p>
       </blockquote>
-      <p>The Worker Investor names both a change in identity and a double-entry discipline: the Worker meets present obligations; the Investor asks what part of today's labor will continue to work in the future.</p>
-      <p>ETF is used here as a design metaphor for a disclosed, rules-guided portfolio—not as a claim that every ETF is passive, index-tracking, fully transparent, or diversified. Real ETFs can be index-based or actively managed, and some provide little diversification.<sup><a href="#ref-etf">2</a></sup> HCE deliberately chooses visible positions, explicit allocation rules, concentration-risk control, long holding periods, and periodic rebalancing as its own design principles.</p>
+      <p>The Worker Investor is a two-horizon discipline, not a second job. The Worker meets present obligations. The Investor reserves part of today's wages, experience, attention, and effort for capabilities and assets that can serve tomorrow. Human Capital ETF is the policy for deciding what to protect, build, externalize, and rebalance.</p>
+      <p>ETF is used here as a design metaphor for a disclosed, rules-guided portfolio—not as a claim that every ETF is passive, index-tracking, fully transparent, or diversified. Real ETFs can be index-based or actively managed, and some provide little diversification.<sup><a class="note-ref" href="#ref-etf" id="note-etf" aria-label="Note 1">1</a></sup> HCE deliberately adopts visible positions, explicit allocation rules, concentration-risk control, long holding periods, and periodic rebalancing as its own design principles.</p>
       <blockquote>
-        <p class="quote">You are not a job or a single skill. Your capabilities can deepen or depreciate, your portfolio can drift, and your allocation can be rebalanced.</p>
+        <p>You are not a job or a single skill. Your capabilities can deepen or depreciate, your portfolio can drift, and your allocation can be rebalanced.</p>
       </blockquote>
     </section>
 
-    <section id="capital-structure">
-      <hr class="section">
-      <h2 class="section-number">SECTION 2.</h2>
-      <h3 class="section-title">THE CAPITAL STRUCTURE</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="ledger">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 2.</span><span class="section-title">The Allocation Ledger</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>Human Capital ETF is centered on capability embodied in the worker, but it manages a wider system that protects, externalizes, and rewards that capability. Four economic layers should not be collapsed into one list of assets.</p>
+      <p>Human Capital ETF is centered on capability embodied in the worker, but it manages a wider system that protects, externalizes, and rewards that capability. The following categories should not be collapsed into one list of assets.</p>
       <dl class="term-list">
-        <div><dt>Inputs</dt><dd>Time, energy, attention, and money available for allocation.</dd></div>
-        <div><dt>Embodied Human Capital</dt><dd>Health, professional capability, transferable skills, learning capacity, and judgment.</dd></div>
-        <div><dt>Enabling and Externalized Assets</dt><dd>Financial buffer, tools, systems, artifacts, reputation, relationships, and channels.</dd></div>
-        <div><dt>Returns and Outcomes</dt><dd>Income resilience, feedback, opportunity, autonomy, and future optionality.</dd></div>
+        <div><dt>Allocable Inputs</dt><dd>Time, usable energy, attention, and allocable cash.</dd></div>
+        <div><dt>Embodied Stocks</dt><dd>Health and capabilities retained in the person, including professional skill, learning capacity, and judgment.</dd></div>
+        <div><dt>Enabling Stocks</dt><dd>A financial buffer, tools, and systems that protect or extend the worker's capacity.</dd></div>
+        <div><dt>Externalized Stocks</dt><dd>Controlled artifacts, documented methods, and other reusable outputs that persist outside the person.</dd></div>
+        <div><dt>Return Flows</dt><dd>Income, feedback, and opportunities generated through labor or assets.</dd></div>
+        <div><dt>Outcomes</dt><dd>Resilience, autonomy, and future optionality.</dd></div>
+        <div><dt>Constraints and Exposures</dt><dd>Obligations, limits, and dependencies that shape the policy but are not assets.</dd></div>
       </dl>
-      <p>Cash flow is a flow; a financial buffer is a stock. Capability is embodied in the worker; an essay, tool, or documented method is an externalized asset only when it can be retained or meaningfully controlled and reused. Reputation and relationships are forms of social capital. A channel is distribution infrastructure. Feedback, opportunity, and income are returns rather than holdings.</p>
-      <p>The four positions cut across these layers. They describe what an allocation is doing now. A Growth capability can enter Core after repeated deployment. Core knowledge can enter Distribution after it is externalized into a useful artifact. The name of the item does not determine the position; its present function does.</p>
+      <p class="principle"><strong>The ledger tells you what something is. The four positions tell you what an allocation is doing. Flows, constraints, and exposures inform the policy; they are not positions.</strong></p>
+      <p>Cash flow is a flow; a financial buffer is a stock. Capability is embodied in the worker; an essay, tool, or documented method is externalized only when it can be retained or meaningfully controlled and reused. Feedback, opportunity, and income are returns rather than holdings.</p>
+      <p>A relationship is not property, and another person is never a holding. HCE may record professional trust, reciprocal access, and reputation as forms of social capital, but they are maintained with others and are never fully owned or controlled.</p>
     </section>
 
     <section id="core">
-      <hr class="section">
-      <h2 class="section-number">SECTION 3.</h2>
-      <h3 class="section-title">CORE: PROTECT THE PRINCIPAL</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 3.</span><span class="section-title">Core · Protect the Principal</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p class="question">What loss would make it hard for me to continue?</p>
+      <p class="question">What must remain healthy and reliable for the system to continue?</p>
       <p>Core protects the conditions without which the portfolio cannot continue: health and recovery, current employability, professional delivery, income continuity, credibility, and a financial buffer. These are not one economic type. They share one function: they keep the worker able to meet present obligations and preserve the capacity to invest.</p>
       <p>Health is not an ordinary line item. It is the operational principal and clearing layer through which every other position must pass. When health fails, learning, output, income, and the ability to govern the portfolio can be repriced together.</p>
-      <p class="indentb"><strong>Evidence.</strong> You can work and recover, absorb shocks, and honor commitments without chronic depletion.<br><strong>False form.</strong> Unlimited overtime in the name of security; income continuity purchased with health debt; a title mistaken for portable capability.<br><strong>Audit.</strong> What loss tomorrow would immediately weaken my whole system?</p>
+      <p class="evidence"><strong>Evidence.</strong> You can work and recover, absorb shocks, and honor commitments without chronic depletion.<br><strong>False form.</strong> Unlimited overtime in the name of security; income continuity purchased with health debt; a title mistaken for portable capability.</p>
     </section>
 
     <section id="growth">
-      <hr class="section">
-      <h2 class="section-number">SECTION 4.</h2>
-      <h3 class="section-title">GROWTH: EXPAND OPTIONALITY</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 4.</span><span class="section-title">Growth · Build Optionality</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p class="question">What could I build today that changes who I can be in three years?</p>
+      <p class="question">Which not-yet-mature capability could widen my future choices?</p>
       <p>Growth develops capabilities, projects, and paths that are not yet mature but can expand future choice. It may be a high-leverage skill, a cross-domain combination, a second curve, or a new method formed through real projects.</p>
       <p>Learning alone is not evidence of an asset. Growth becomes real when input changes judgment, capability, action, tools, or output. It should amplify Core rather than become an escape from present problems.</p>
       <p>Growth should also improve portability. Over time, part of the worker's capability should remain useful beyond one employer, internal system, platform, or narrow role. Firm-specific capability can be valuable; unmanaged dependence on it is the concentration risk.</p>
-      <p class="indentb"><strong>Evidence.</strong> The capability can be deployed repeatedly, has entered a project, and retains value across settings.<br><strong>False form.</strong> Collecting courses and chasing trends without projects or verifiable results.<br><strong>Audit.</strong> What three-to-five-year capability am I building, and where has it entered real work?</p>
+      <p class="evidence"><strong>Evidence.</strong> The capability can be deployed repeatedly and has entered real work.<br><strong>False form.</strong> Collecting courses and chasing trends without projects or verifiable results.</p>
     </section>
 
     <section id="distribution">
-      <hr class="section">
-      <h2 class="section-number">SECTION 5.</h2>
-      <h3 class="section-title">DISTRIBUTION: EXTERNALIZE VALUE</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 5.</span><span class="section-title">Distribution · Bring Value into the World</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p class="question">What can keep carrying value while I am absent?</p>
+      <p class="question">How can others find, verify, use, and respond to my capability?</p>
       <p>Distribution is the function that externalizes embodied capability. It turns experience, skill, and judgment into forms other people can find, understand, verify, and reuse.</p>
-      <p>Its outputs may become knowledge assets, production assets, reputation, relationships, or distribution infrastructure. Essays, technical documents, tools, cases, talks, and products can all serve this function. Feedback, opportunities, and income are returns from those assets, not the assets themselves.</p>
+      <p>Its outputs may become knowledge assets, production assets, reputation, or distribution infrastructure. Essays, technical documents, tools, cases, talks, and products can all serve this function. Feedback, opportunities, and income are returns from those assets, not the assets themselves.</p>
       <p>This is not self-packaging, and it does not require everyone to become a content creator. Distribution gives tacit capability evidence, extends the life of one act of labor, and returns real use and feedback to the portfolio.</p>
-      <p class="indentb"><strong>Evidence.</strong> The work can be found, cited, shared, or used while you are offline.<br><strong>False form.</strong> Reach before capability; exposure without a controlled record, trust, or feedback.<br><strong>Audit.</strong> What lets another person understand and trust my capability three years from now?</p>
+      <p class="evidence"><strong>Evidence.</strong> The work can be found, cited, shared, or used while you are offline.<br><strong>False form.</strong> Reach before capability; exposure without a controlled record, trust, or feedback.</p>
     </section>
 
     <section id="meta">
-      <hr class="section">
-      <h2 class="section-number">SECTION 6.</h2>
-      <h3 class="section-title">META: GOVERN AND REBALANCE</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 6.</span><span class="section-title">Meta · Rebalance</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p class="question">How do I know I am not drifting?</p>
+      <p class="question">What evidence should change my next allocation?</p>
       <p>Meta is one of the four functional positions, but it is not an ordinary asset basket. It is the governance layer of the portfolio: judgment, learning systems, attention allocation, risk identification, review, rebalancing, and stopping or exit rules.</p>
-      <p>Meta can itself improve with practice, but its defining role is to turn evidence into allocation changes. Work consumes Growth. Learning never reaches Distribution. Public output drains Core. Meta decides what to add, reduce, maintain, migrate, or stop when the evidence changes.</p>
-      <p class="indentb"><strong>Evidence.</strong> Changes have reasons, priorities enter the calendar, and old projects can stop.<br><strong>False form.</strong> Endless review, tool collecting, and frequent direction changes without trade-offs.<br><strong>Audit.</strong> What evidence triggers my next change, and which position is financing another through chronic damage?</p>
+      <p>Meta can itself improve with practice, but its defining role is to turn evidence into allocation changes. Work may consume Growth. Learning may never reach Distribution. Public output may drain Core. Meta decides what to add, reduce, maintain, migrate, or stop when the evidence changes.</p>
+      <p class="evidence"><strong>Evidence.</strong> Changes have reasons, priorities enter the calendar, and old projects can stop.<br><strong>False form.</strong> Endless review, tool collecting, and frequent direction changes without trade-offs.</p>
     </section>
 
     <section id="portfolio">
-      <hr class="section">
-      <h2 class="section-number">SECTION 7.</h2>
-      <h3 class="section-title">THE WHOLE PORTFOLIO</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 7.</span><span class="section-title">The Portfolio Loop</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
-      <p>Core underwrites experimentation. Growth builds deployable and portable capability. Distribution brings capability into the world. Meta reads the evidence and changes the next allocation.</p>
-      <p>Growth enters Core when a capability becomes reliable in repeated delivery. Core enters Distribution when tacit experience becomes an artifact that others can find, verify, and use. Distribution can build reputation and relationships and generate feedback, opportunities, and income. When those returns strengthen health, professional capacity, or the financial buffer, they reinforce Core. Meta then begins the next allocation cycle.</p>
+      <p>Protect the principal. Build optionality. Bring value into the world. Rebalance.</p>
+      <p>Core underwrites experimentation. Growth builds deployable capability. Distribution brings capability into the world. Meta reads the evidence and changes the next allocation.</p>
+      <p>A capability <em>migrates</em> when its primary function changes, such as Python moving from Growth to Core after repeated professional deployment. Capability is <em>converted</em> when it creates a distinct externalized asset. That asset may produce a <em>return</em> in income, feedback, or opportunity. A return is <em>reinvested</em> when it is allocated to recovery, a financial buffer, or the next capability.</p>
       <p>Diversification does not mean doing everything at once. It means preventing one source of risk from breaking income, capability, identity, and the future together. Focus creates strength; unmanaged concentration creates fragility.</p>
       <blockquote>
-        <p class="quote">The goal is not maximum productivity in every hour. It is durable optionality.</p>
+        <p>The goal is not maximum productivity in every hour. It is durable optionality.</p>
       </blockquote>
-      <p>For the intellectual sources and boundaries of the framework, continue to <a href="./origins.html">Part II: Intellectual Origins</a>. For the inventory, asset test, allocation policy, and rebalancing cadence, continue to <a href="./operating-system.html">Part III: Portfolio Construction and Rebalancing</a>.</p>
     </section>
 
-    <section id="not">
-      <hr class="section">
-      <h2 class="section-number">SECTION 8.</h2>
-      <h3 class="section-title">WHAT HCE IS NOT</h3>
-      <hr class="section">
-      <p class="space" aria-hidden="true">&nbsp;</p>
+    <section id="not-hce">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 8.</span><span class="section-title">What HCE Is Not</span></h2>
+      <hr class="section-rule" aria-hidden="true">
 
       <dl class="term-list">
-        <div><dt>Not a security</dt><dd>It cannot be traded, subscribed to, or redeemed, and it does not promise a financial return.</dd></div>
-        <div><dt>Not an index fund</dt><dd>ETF names a chosen portfolio metaphor, not a claim of passive management or index tracking.</dd></div>
-        <div><dt>Not a universal allocation</dt><dd>There is no fixed ratio suitable for every age, health condition, family responsibility, career stage, or risk.</dd></div>
+        <div><dt>Not a security or return forecast</dt><dd>It cannot be traded, subscribed to, or redeemed, and it promises no financial or human-capital return.</dd></div>
+        <div><dt>Not an index fund or universal allocation</dt><dd>ETF names a selected portfolio metaphor. No fixed ratio suits every health condition, obligation, career stage, or risk.</dd></div>
         <div><dt>Not an hourly productivity system</dt><dd>Efficient execution cannot answer why a task matters or what remains after it is complete.</dd></div>
-        <div><dt>Not a promise that all work becomes an asset</dt><dd>Ownership, control, reuse, portability, maintenance, and evidence still matter.</dd></div>
-        <div><dt>Not a theory of individual blame</dt><dd>Personal allocation operates inside unequal institutions, labor markets, health conditions, and obligations.</dd></div>
+        <div><dt>Not a promise that effort defeats every constraint</dt><dd>Ownership, control, maintenance, institutions, labor markets, health, and unequal opportunity still matter.</dd></div>
         <div><dt>Not the financialization of life</dt><dd>Love, rest, relationships, curiosity, and experience without measurable output do not need to justify themselves as investments.</dd></div>
       </dl>
     </section>
 
+    <section id="reading">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Section 9.</span><span class="section-title">Reading Paths</span></h2>
+      <hr class="section-rule" aria-hidden="true">
+
+      <dl class="term-list reading-paths">
+        <div><dt>To understand the framework</dt><dd>You have begun in Part I; return to the definition and the Allocation Ledger when a term becomes unclear.</dd></div>
+        <div><dt>To begin using it</dt><dd>Continue directly to <a href="./operating-system.html">Part III: Operating Policy</a> and write the one-page policy.</dd></div>
+        <div><dt>To examine its sources and boundaries</dt><dd>Read <a href="./origins.html">Part II: Intellectual Origins</a>, from Smith and Marx to Schultz and Becker.</dd></div>
+      </dl>
+    </section>
+
     <section id="references">
-      <hr class="section">
-      <h2 class="section-number">NOTES AND REFERENCES.</h2>
-      <hr class="section">
+      <hr class="section-rule" aria-hidden="true">
+      <h2><span class="section-number">Notes.</span><span class="section-title">References</span></h2>
+      <hr class="section-rule" aria-hidden="true">
       <ol class="references">
-        <li id="ref-origin">Qiaomai, “Human Capital ETF,” July 12, 2026. <a href="https://69mike.com/posts/2026-07-12-human-capital-etf-framework/">Original essay at 69mike.com</a>.</li>
-        <li id="ref-etf">U.S. Securities and Exchange Commission, “Updated Investor Bulletin: Exchange-Traded Funds (ETFs).” <a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24">Investor.gov</a>; “Exchange-Traded Funds (ETFs).” <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2">Investor.gov</a>.</li>
+        <li id="ref-etf">U.S. Securities and Exchange Commission, “Updated Investor Bulletin: Exchange-Traded Funds (ETFs).” <a href="https://www.investor.gov/introduction-investing/general-resources/news-alerts/alerts-bulletins/investor-bulletins-24">Investor.gov</a>; “Exchange-Traded Funds (ETFs).” <a href="https://www.investor.gov/introduction-investing/investing-basics/investment-products/mutual-funds-and-exchange-traded-2">Investor.gov</a>. <a class="backlink" href="#note-etf" aria-label="Back to note 1 in the text">↩</a></li>
       </ol>
     </section>
   </main>
 
-  <footer>
-    <hr class="end">
-    <p class="next"><a href="./origins.html">Next: Intellectual Origins</a></p>
-    <p class="footer">[ <a href="./">Framework</a> | <a href="./origins.html">Intellectual Origins</a> | <a href="./operating-system.html">Operating System</a> | <a href="https://69mike.com">Author</a> ]</p>
-    <p class="pagenote">Third edition, July 2026. An open work under continuous revision. ETF is an allocation metaphor, not a financial product or investment advice.</p>
+  <footer class="book-footer">
+    <hr class="end" aria-hidden="true">
+    <nav class="folio-nav" aria-label="Continue reading">
+      <span>Part I of III</span>
+      <a href="./origins.html" rel="next">Next: Intellectual Origins →</a>
+    </nav>
+    <nav class="series-nav" aria-label="Human Capital ETF links">
+      [ <a href="./" aria-current="page">Framework</a> · <a href="./origins.html">Origins</a> · <a href="./operating-system.html">Operating Policy</a> · <a href="https://69mike.com" rel="author">Author</a> ]
+    </nav>
+    <p class="pagenote">Fourth edition, July 2026. An open work under continuous revision. ETF is an allocation metaphor, not a financial product or investment advice.</p>
   </footer>
 </body>
 </html>

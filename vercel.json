@@ -11,6 +11,41 @@
   ],
   "redirects": [
     {
+      "source": "/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/origins.html/",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/operating-system.html/",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/origins",
+      "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/operating-system",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/zh/index.html",
+      "destination": "/",
+      "permanent": true
+    },
+    {
       "source": "/en/origins.html",
       "destination": "/origins.html",
       "permanent": true
@@ -18,6 +53,16 @@
     {
       "source": "/zh/origins.html",
       "destination": "/origins.html",
+      "permanent": true
+    },
+    {
+      "source": "/en/operating-system.html",
+      "destination": "/operating-system.html",
+      "permanent": true
+    },
+    {
+      "source": "/zh/operating-system.html",
+      "destination": "/operating-system.html",
       "permanent": true
     },
     {
@@ -36,7 +81,7 @@
       "permanent": true
     },
     {
-      "source": "/framework/",
+      "source": "/framework",
       "destination": "/",
       "permanent": true
     },
@@ -46,7 +91,7 @@
       "permanent": true
     },
     {
-      "source": "/about/",
+      "source": "/about",
       "destination": "/origins.html",
       "permanent": true
     },
@@ -56,7 +101,7 @@
       "permanent": true
     },
     {
-      "source": "/notes/",
+      "source": "/notes",
       "destination": "/origins.html",
       "permanent": true
     },
@@ -66,7 +111,7 @@
       "permanent": true
     },
     {
-      "source": "/programs/",
+      "source": "/programs",
       "destination": "/operating-system.html",
       "permanent": true
     },
@@ -76,7 +121,7 @@
       "permanent": true
     },
     {
-      "source": "/calculator/",
+      "source": "/calculator",
       "destination": "/operating-system.html",
       "permanent": true
     },
@@ -86,19 +131,48 @@
       "permanent": true
     },
     {
-      "source": "/en/",
-      "destination": "/",
-      "permanent": true
-    },
-    {
       "source": "/zh/:path*",
       "destination": "/",
       "permanent": true
-    },
+    }
+  ],
+  "headers": [
     {
-      "source": "/zh/",
-      "destination": "/",
-      "permanent": true
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'none'; style-src 'self'; script-src 'none'; img-src 'none'; font-src 'none'; connect-src 'none'; media-src 'none'; object-src 'none'; frame-src 'none'; worker-src 'none'; manifest-src 'none'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "accelerometer=(), autoplay=(), camera=(), geolocation=(), gyroscope=(), magnetometer=(), microphone=(), payment=(), usb=()"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "Cross-Origin-Resource-Policy",
+          "value": "same-origin"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "0"
+        }
+      ]
     }
   ]
 }
